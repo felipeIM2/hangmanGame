@@ -1,0 +1,267 @@
+html {
+  font-size:30px;
+  text-align: center;
+  font-family: "American Typewriter", serif;
+  background-color: #215188;
+  color: rgb(209, 231, 250);
+  text-shadow: 3px 3px 1px black;
+  line-height: 0.5rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5%;
+  padding: 0;
+  margin-left: 100px;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.hangman {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  position: flex;
+  margin-right: 200px;
+}
+
+/* POPUP GANHADOR */
+
+.popupWinnerOff {
+  display: none;
+}
+
+.popupWinnerOn {
+  background-color: rgba(0, 0, 0, 0.849);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupWin {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  border-radius: 40px 10px;
+}
+
+.popupWin button {
+  cursor: pointer;
+  background-color: #fff;
+  border: 0;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  margin-top: 40px;
+}
+
+.popupWin span {
+  margin-bottom: 25px;
+}
+
+/* POPUP PERDEDOR */
+
+.popupLoserOff {
+  display: none;
+}
+
+.popupLoserOn {
+  background-color: rgba(0, 0, 0, 0.849);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupLoser {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  border-radius: 40px 10px;
+}
+
+.popupLoser button {
+  cursor: pointer;
+  background-color: #fff;
+  border: 0;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  margin-top: 40px;
+}
+
+.popupLoser span {
+  margin-bottom: 25px;
+}
+
+/* POPUP RESPOSTA RAPIDA */
+
+.popupAnswerOff {
+  display: none;
+}
+
+.popupAnswerOn {
+  background-color: rgba(0, 0, 0, 0.849);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupAnswer {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  border-radius: 40px 10px;
+}
+
+.popupAnswer button {
+  cursor: pointer;
+  background-color: #fff;
+  border: 0;
+  padding: 12px 20px;
+  width: 200px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popupAnswer span {
+  margin-bottom: 25px;
+}
+
+.answerInput {
+  outline: none;
+  border: none;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom:5px;
+  font-size: 20px;
+  font-family: "American Typewriter", serif;
+}
+
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.search input {
+  outline: none;
+  border: none;
+  height: 28px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom:5px;
+  font-size: 16px;
+  font-family: "American Typewriter", serif;
+  margin-bottom: 10px;
+}
+
+.search button  {
+  outline: none;
+  width: 120px;
+  height: 25px;
+  border-radius: 30px;
+  border: 0;
+  margin-top: 5px;
+  font-size: 18px;
+  font-family: "American Typewriter", serif;
+  background-color: #12283e;
+  color: white; 
+}
+
+.search button:hover {
+  background-color:#1092ca;
+  transition: .4s;
+}
+
+#wordError {
+  display: flex;
+  width: 400px;
+  margin-left: 244px;
+}
+
+#wordError p {
+  margin-left: 26px;
+}
+
+.hangmanHeadOff, .hangmanStemOff, 
+.hangmanArmLeftOff, .hangmanArmRightOff, 
+.hangmanLegLeftOff, .hangmanLegRightOff {
+  display: none;
+}
+
+.hangmanHeadOn, .hangmanStemOn, 
+.hangmanArmLeftOn, .hangmanArmRightOn, 
+.hangmanLegLeftOn, .hangmanLegRightOn {
+  display: flex;
+}
+
+#tipWord, #secretWord {
+  min-width: 400px;
+  max-width: 650px;
+  margin:0;
+  margin-bottom: 20px;
+}
+
+.wordsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin: 0;
+}
+
+
+

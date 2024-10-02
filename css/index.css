@@ -1,0 +1,65 @@
+html {
+  text-shadow: 3px 3px 1px black;
+  background-color: #215188;
+  color: rgb(209, 231, 250);
+  font-family: "American Typewriter", serif;
+}
+
+h1 {
+  font-size: 60px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.box,.box > form, h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 170px;
+  outline:none;
+  text-align: center;
+  height: 25px;
+  border-radius: 40px;
+  background-color: #215188;
+  color: white;
+  font:bold;
+  font-size: 15px;
+  font-family: "American Typewriter", serif;
+  border: solid white 2px;
+}
+
+.box > form > label {
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+.box > form > input {
+  margin-bottom: 15px;
+}
+
+button {
+  outline: none;
+  width: 120px;
+  height: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px 14px;
+  border: none;
+  color: white;
+  background-color: #12283e; 
+  font-family: "American Typewriter", serif;
+  transition:.4s;
+}
+
+button:hover {
+  background-color:  #1092ca;
+  transition:.4s;
+  width: 130px;
+}
+
+.newGenerate {
+  margin-top:20px;
+}

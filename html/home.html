@@ -1,0 +1,85 @@
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/inGame.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Jogo da Forca</title>
+  </head>
+  <body>
+    <h1>Digite no teclado uma letra e tente adivinhar a palavra!</h1>
+    <div class="gameContainer">
+      <div>
+        <svg height="250" width="200" class="hangman">
+          <!-- forca -->
+          <line x1="60" y1="20" x2="140" y2="20" />
+          <line x1="140" y1="20" x2="140" y2="50" />
+          <line x1="60" y1="20" x2="60" y2="230" />
+          <line x1="20" y1="230" x2="100" y2="230" />
+
+          <!-- cabeça -->
+          <circle cx="140" cy="70" r="20" class="hangmanHeadOff"  id="hangmanHead"/>
+          <!-- corpo -->
+          <line x1="140" y1="90" x2="140" y2="150" class="hangmanStemOff" id="hangmanStem"/>
+          <!-- braços -->
+          <line x1="140" y1="120" x2="120" y2="100" class="hangmanArmLeftOff" id="hangmanArmLeft"/>
+          <line x1="140" y1="120" x2="160" y2="100" class="hangmanArmRightOff" id="hangmanArmRight"/>
+          <!-- pernas -->
+          <line x1="140" y1="150" x2="120" y2="180" class="hangmanLegLeftOff" id="hangmanLegLeft"/>
+          <line x1="140" y1="150" x2="160" y2="180" class="hangmanLegRightOff" id="hangmanLegRight"/>
+        </svg>
+      </div>
+      <div>
+        <h2>Letras erradas</h2>
+        <div id="wordError">
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="wordsContainer">
+      <p id="tipWord"></p>
+      <p id="secretWord"></p>
+    </div>
+
+    <div class="popupWinnerOff" id="popupWin">
+      <div class="popupWin">
+          <span> Parabéns </span>
+          <span>você ganhou!</span>
+        <a href="../index.html"><button> Jogar novamente </button></a>
+      </div>
+    </div>
+
+    <div class="popupLoserOff" id="popupLoser">
+      <div class="popupLoser">
+          <span> Que pena </span>
+          <span>Não foi desta vez!</span>
+        <a href="../index.html"><button> Jogar novamente </button></a>
+      </div>
+    </div>
+    <!-- ---------------------------------------------------- -->
+    <div class="popupAnswerOff" id="popupAnswer">
+      <div class="popupAnswer">
+        
+         <span>Responda aqui!</span>
+         <input type="text" class="answerInput" placeholder="Resposta" autocomplete="off" id="answerInput">
+        <button id="sendAnswer">Enviar</button>
+        <button id="exitAnswer">Cancelar</button>
+      </div>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="Digite Aqui" minlength="1" maxlength="1" autocomplete="off"  id="sendWord" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');">
+      <div>
+        <button id="correctWord">Enviar</button>
+        <button id="fastAnswer">Adivinhar</button>
+      </div>
+    </div>
+    <script type="module" src="../js/inGame.js"></script>
+  </body>
+</html>
