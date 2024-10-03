@@ -62,7 +62,7 @@ h2 {
   display: flex;
   width: 280px;
   flex-direction: column;
-  background: #2980b9;
+  background-color: #215188;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -72,12 +72,26 @@ h2 {
 
 .popupWin button {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #12283e;
+  color: #fff;
   border: 0;
   padding: 12px 20px;
+  width: 200px;
+  height: 40px;
   font-size: 16px;
   border-radius: 40px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.4s;
+  border-radius: 20px 20px 5px 5px;
+}
+
+.popupWin button:hover {
+  cursor: pointer;
+  background-color:#1092ca;
+  width: 220px;
+  transition: 0.4s;
 }
 
 .popupWin span {
@@ -106,7 +120,7 @@ h2 {
   display: flex;
   width: 280px;
   flex-direction: column;
-  background: #2980b9;
+  background-color: #215188;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -116,12 +130,26 @@ h2 {
 
 .popupLoser button {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #12283e;
+  color: #fff;
   border: 0;
   padding: 12px 20px;
+  width: 200px;
+  height: 40px;
   font-size: 16px;
   border-radius: 40px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.4s;
+  border-radius: 20px 20px 5px 5px;
+}
+
+.popupLoser button:hover {
+  cursor: pointer;
+  background-color:#1092ca;
+  width: 220px;
+  transition: 0.4s;
 }
 
 .popupLoser span {
@@ -150,7 +178,7 @@ h2 {
   display: flex;
   width: 280px;
   flex-direction: column;
-  background: #2980b9;
+  background-color: #215188;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -160,7 +188,8 @@ h2 {
 
 .popupAnswer button {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #12283e;
+  color: #fff;
   border: 0;
   padding: 12px 20px;
   width: 200px;
@@ -170,7 +199,18 @@ h2 {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+  transition: 0.8s;
+  border-radius: 20px 20px 5px 5px;
 }
+
+.popupAnswer button:hover {
+  cursor: pointer;
+  background-color:#1092ca;
+  width: 180px;
+  transition: 0.8s;
+}
+
+
 
 .popupAnswer span {
   margin-bottom: 25px;
@@ -217,12 +257,13 @@ h2 {
   font-size: 18px;
   font-family: "American Typewriter", serif;
   background-color: #12283e;
-  color: white; 
+  color: white;
+  transition: .8s; 
 }
 
 .search button:hover {
   background-color:#1092ca;
-  transition: .4s;
+  transition: .6s;
 }
 
 #wordError {
@@ -260,10 +301,13 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  margin: 0;
+  margin-top: 60px;
 }
 
-
+.wordsContainer > #tipWord {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
 
 .popupErrorOff {
   display: none;
@@ -285,7 +329,7 @@ h2 {
   display: flex;
   width: 280px;
   flex-direction: column;
-  background: #2980b9;
+  background-color: #215188;
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -295,14 +339,45 @@ h2 {
 
 .popupError button {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #12283e;
+  color: #fff;
   border: 0;
   padding: 12px 20px;
+  width: 200px;
+  height: 40px;
   font-size: 16px;
   border-radius: 40px;
   margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.4s;
+  border-radius: 20px 20px 5px 5px;
 }
+
+.popupError button:hover {
+  cursor: pointer;
+  width: 220px;
+  background-color:#1092ca;
+  transition: 0.4s;
+}
+
 
 .popupError span {
   margin-bottom: 25px;
 }
+
+.search > input {
+  margin-top: 5px;
+  width: 250px;
+  height: 40px;
+}
+
+.anwserContainer {
+  margin-top: 40px;
+}
+
+.anwserContainer > button {
+  width: 150px;
+  height: 30px;
+}
+

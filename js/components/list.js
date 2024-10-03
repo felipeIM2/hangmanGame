@@ -12,7 +12,7 @@ let palavras = [
   { palavra: "SOL", dica: "NATUREZA" },
   { palavra: "LUA", dica: "ASTRONOMIA" },
   { palavra: "COMPUTADOR", dica: "TECNOLOGIA" },
-  { palavra: "CAMINHÃO", dica: "VEÍCULOS" },
+  { palavra: "CAMINHÃO", dica: "VEICULOS" },
   { palavra: "LEÃO", dica: "ANIMAIS" },
   { palavra: "PARIS", dica: "CIDADES" },
   { palavra: "CANADÁ", dica: "PAÍSES" },

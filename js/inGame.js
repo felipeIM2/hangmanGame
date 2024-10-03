@@ -4,14 +4,15 @@ const tipParam = localStorage.getItem("tip"); //console.log(tipParam)
 
 
 //-- Filtros de captura do localStorage
-const wordFilter = Array(wordParam.length).fill("_");
-let reciveWord = document.getElementById('sendWord');
+const wordFilter = Array(wordParam.length).fill("_");  //console.log(wordFilter)
+let reciveWord = document.getElementById('sendWord');  
+
 let tryAgain = 6;
 
 
 //-- Exibe a palavra dica
   function showSecretWord(){
-    let wordQuiz = wordFilter.join(" ");
+    let wordQuiz = wordFilter.join(" "); //console.log(wordQuiz)
     document.getElementById("secretWord").textContent = "Palavra: " + wordQuiz;
     document.getElementById("tipWord").textContent = "Dica: " + tipParam;
 
