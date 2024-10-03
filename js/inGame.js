@@ -1,16 +1,15 @@
-//-- CAPTURA DE PALAVRA DO INDEX.HTML
-const urlParams = new URLSearchParams(window.location.search);
-const wordParam = urlParams.get("word").toUpperCase(); //console.log(wordParam)
-const tipParam = urlParams.get("tip").toLowerCase(); //console.log(tipParam)
+//-- Captura de palavra do locaStorage
+const wordParam = localStorage.getItem("word"); //console.log(wordParam)
+const tipParam = localStorage.getItem("tip"); //console.log(tipParam)
 
 
-//-- FILTROS E CAPTURAS DO HOME.HTML
+//-- Filtros de captura do localStorage
 const wordFilter = Array(wordParam.length).fill("_");
 let reciveWord = document.getElementById('sendWord');
 let tryAgain = 6;
 
 
-//-- MOSTRAR PALAVRA SECRETA
+//-- Exibe a palavra dica
   function showSecretWord(){
     let wordQuiz = wordFilter.join(" ");
     document.getElementById("secretWord").textContent = "Palavra: " + wordQuiz;
@@ -20,32 +19,31 @@ let tryAgain = 6;
   showSecretWord()
 
 
-//-- FUNÇÃO PARA APARECER POPUP JOGADOR GANHOU
+//-- Função que exibe que o jogador venceu
   const popupWin = document.getElementById("popupWin");
   function popupWinOn(){
     popupWin.setAttribute("class", "popupWinnerOn");
   }
 
-//-- FUNÇÃO PARA APARECER POPUP JOGADOR PERDEU
+//-- Função que exibe que o jogador perdeu
   const popupLoser = document.getElementById("popupLoser");
   function popupLoserOn(){
     popupLoser.setAttribute("class", "popupLoserOn");
   }
 
-//-- FILTRO E EXPOSIÇÃO DE PALAVRAS ERRADAS
+
+//-- Filtro e exposição de letras erradas
 const divWordError = document.getElementById("wordError"); //console.log(divwordError);
 function wordError(){ 
  let reciveWord = document.getElementById('sendWord').value.toUpperCase(); //console.log(reciveWord);
   let p = document.createElement("p");
-  p.innerHTML = reciveWord;
-  divWordError.appendChild(p);
-
+    p.innerHTML = reciveWord;
+     divWordError.appendChild(p);
 }
 
-//-- FUNÇÃO PRINCIPAL
+//-- Função principal
   const correctWord = document.getElementById("correctWord");
 correctWord.addEventListener("click", () => {
-
   const word = reciveWord.value.trim().toUpperCase();
   if (wordParam.includes(word)) {
     for (let i = 0; i < wordParam.length; i++) {
@@ -54,8 +52,8 @@ correctWord.addEventListener("click", () => {
       }
     }
 
-//-- LIMPAR IMPUT APÓS ACERTO DA LETRA
-     document.getElementById("sendWord").value = "";
+//-- Limpar a palavra após o acerto 
+  document.getElementById("sendWord").value = "";
 
     if (!wordFilter.includes("_")) {
       popupWinOn();
@@ -67,6 +65,7 @@ correctWord.addEventListener("click", () => {
         let head = document.getElementById('hangmanHead');
         head.classList.remove('hangmanHeadOff');
         head.classList.add('hangmanHeadOn');
+        
         break;
       case 4:
         let stem = document.getElementById('hangmanStem');
@@ -96,8 +95,10 @@ correctWord.addEventListener("click", () => {
     }
 
     if (tryAgain > 0) {
-      alert(`word incorreta. Tentativas restantes: ${tryAgain}`);    
+      // alert(`word incorreta. Tentativas restantes: ${tryAgain}`);    
+      popupErrorOn()
       wordError();
+//-- Limpa a palavra após o erro      
       document.getElementById("sendWord").value = '';
     } else {
       popupLoserOn();
@@ -106,9 +107,17 @@ correctWord.addEventListener("click", () => {
   showSecretWord();
 })
 
-//-- RESPOSTA RAPIDA
+//-- Exibir contagem de erros
+  const countError = document.getElementById("countError");
 
-//-- CHAMA O POPUP DE RESPOSTA RAPIDA
+//-- Popup para a mensagem de erro 
+  const popupError = document.getElementById("popupError");
+  function popupErrorOn(){
+    popupError.setAttribute("class", "popupErrorOn");
+    countError.innerHTML = (`${tryAgain} chances`)
+  }
+
+//-- Chama o popup de resposta rapida
 const answer = document.getElementById("fastAnswer");
 const popupFastAnswer = document.getElementById("popupAnswer");
 
@@ -116,7 +125,7 @@ const popupFastAnswer = document.getElementById("popupAnswer");
   popupFastAnswer.setAttribute("class", "popupAnswerOn");
  })
 
-//-- FUNCIONAMENTO DE RESPOSTA RAPIDA
+//-- Funcionamento de resposta rapida
 const reciveAnswer = document.getElementById("sendAnswer");
  reciveAnswer.addEventListener("click", () => {
   let response = document.getElementById("answerInput").value.toUpperCase();
@@ -129,10 +138,14 @@ const reciveAnswer = document.getElementById("sendAnswer");
   }
  })
 
+//-- Funcionalidade de cancelar resposta rapida
+  const exitAnswer = document.getElementById("exitAnswer");
+  exitAnswer.addEventListener("click", () => {
+    popupFastAnswer.setAttribute("class", "popupAnswerOff");
+  })
 
-//-- FUNCIONAMENTO DE RESPOSTA RAPIDA
-const exitAnswer = document.getElementById("exitAnswer");
-
-exitAnswer.addEventListener("click", () => {
-  popupFastAnswer.setAttribute("class", "popupAnswerOff");
- })
+//-- Funcionalidade de tentar novamente ao errar
+  const exitError = document.getElementById("exitError");
+  exitError.addEventListener("click", () => {
+    popupError.setAttribute("class", "popupAnswerOff");
+  })

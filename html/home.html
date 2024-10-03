@@ -43,8 +43,8 @@
     </div>
     </div>
     <div class="wordsContainer">
-      <p id="tipWord"></p>
-      <p id="secretWord"></p>
+      <h5 id="tipWord"></h6>
+      <h4 id="secretWord"></h4>
     </div>
 
     <div class="popupWinnerOff" id="popupWin">
@@ -70,6 +70,14 @@
          <input type="text" class="answerInput" placeholder="Resposta" autocomplete="off" id="answerInput">
         <button id="sendAnswer">Enviar</button>
         <button id="exitAnswer">Cancelar</button>
+      </div>
+    </div>
+
+    <div class="popupErrorOff" id="popupError">
+      <div class="popupError">
+        <span>Voce tem apenas:</span>
+        <p id="countError"></p>
+        <button id="exitError">Tentar novamente</button>
       </div>
     </div>
 
