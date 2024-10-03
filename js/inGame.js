@@ -2,9 +2,11 @@
 const wordParam = localStorage.getItem("word"); //console.log(wordParam)
 const tipParam = localStorage.getItem("tip"); //console.log(tipParam)
 
+//-- Função para remover caracteres especiais e espaços
+const cleanWord = wordParam.replace(/[^a-zA-Z0-9]/g, '')
 
 //-- Filtros de captura do localStorage
-const wordFilter = Array(wordParam.length).fill("_");  //console.log(wordFilter)
+const wordFilter = Array(cleanWord.length).fill("_");  // console.log(wordFilter)
 let reciveWord = document.getElementById('sendWord');  
 
 let tryAgain = 6;
@@ -46,9 +48,9 @@ function wordError(){
   const correctWord = document.getElementById("correctWord");
 correctWord.addEventListener("click", () => {
   const word = reciveWord.value.trim().toUpperCase();
-  if (wordParam.includes(word)) {
-    for (let i = 0; i < wordParam.length; i++) {
-      if (wordParam[i] === word && wordFilter[i] === "_") {
+  if (cleanWord.includes(word)) {
+    for (let i = 0; i < cleanWord.length; i++) {
+      if (cleanWord[i] === word && wordFilter[i] === "_") {
         wordFilter[i] = word;
       }
     }
@@ -130,7 +132,7 @@ const popupFastAnswer = document.getElementById("popupAnswer");
 const reciveAnswer = document.getElementById("sendAnswer");
  reciveAnswer.addEventListener("click", () => {
   let response = document.getElementById("answerInput").value.toUpperCase();
-  if(response === wordParam){
+  if(response === cleanWord){
     popupFastAnswer.setAttribute("class", "popupAnswerOff");
     popupWinOn();
   }else{
