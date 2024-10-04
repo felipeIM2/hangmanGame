@@ -3,7 +3,7 @@ const wordParam = localStorage.getItem("word"); //console.log(wordParam)
 const tipParam = localStorage.getItem("tip"); //console.log(tipParam)
 
 //-- Função para remover caracteres especiais e espaços
-const cleanWord = wordParam.replace(/[^a-zA-Z0-9]/g, '')
+const cleanWord = wordParam.normalize("NFD").replace(/[^a-zA-Z0-9]/g, ''); //console.log(cleanWord)
 
 //-- Filtros de captura do localStorage
 const wordFilter = Array(cleanWord.length).fill("_");  // console.log(wordFilter)
