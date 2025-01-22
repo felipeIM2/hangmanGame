@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Jogo da forca</title>
-    <link rel="stylesheet" href="./css/index.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Jogo da forca</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
 
-  <body>
-    <div>
-      <h1> JOGO DA FORCA</h1>
+<body>
+  <div>
+    <h1>JOGO DA FORCA</h1>
+    <form class="dificultGame">
+      <input type="radio" id="Facil" name="fav_language" value="Facil">
+      <label for="Facil">Fácil</label><br>
+      <input type="radio" id="Medio" name="fav_language" value="Médio">
+      <label for="Medio">Médio</label><br>
+      <input type="radio" id="Dificil" name="fav_language" value="Dificil">
+      <label for="Dificil">Difícil</label>
+    </form>
+  </div>
+  <div class="box">
+    <div id="form">
+      <label for="dica">Dica:</label>
+      <input type="text" id="tip" name="tip" autocomplete="off" readonly>
+      <label for="palavra">Palavra:</label>
+      <input type="password" id="word" name="word" autocomplete="off" readonly>
+      <button id="initGame">Iniciar</button>
     </div>
-     <div class="box">
-        <div id="form">
-           <label for="palavra">Palavra:</label>
-          <input type="password" id="word" name="word" autocomplete="off" readonly>
-            <label for=" dica">Dica:</label>
-          <input type="text" id="tip" name="tip" autocomplete="off" readonly>
-          <button id="initGame" >Iniciar</button>
-        </div>
-        <button class="newGenerate" id="newGenerate">Nova palavra</button>
-      </div>
 
-    <script type="module"  src="./js/script.js"></script>
-  </body>
+    <!-- <button class="newGenerate" id="newGenerate">Nova palavra</button> -->
+  </div>
+
+  <script type="module" src="./js/script.js"></script>
+</body>
+
 </html>
-
-
