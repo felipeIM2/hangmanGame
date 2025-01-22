@@ -38,5 +38,5 @@ const randomElement = list[Math.floor(Math.random() * list.length)];
  
 //-- Chamando a rota do jogo
  initGame.addEventListener("click", () => {
-    location = "/html/home.html"
+    location = "./html/home.html"
 });
