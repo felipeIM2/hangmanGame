@@ -48,7 +48,7 @@ loadNull()
  function setData() { 
   let wr = document.getElementById("word").value; 
   let tp = document.getElementById("tip").value; 
-    console.log(wr, tp)
+    // console.log(wr, tp)
   localStorage.setItem("word", wr);
   localStorage.setItem("tip", tp);
 }
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   radios.forEach(radio => {
     radio.addEventListener('change', (event) => {
       const selectedDifficulty = event.target.value;
-      console.log("Dificuldade selecionada:", selectedDifficulty);
+      // console.log("Dificuldade selecionada:", selectedDifficulty);
 
  
       if (selectedDifficulty === "Facil") {
